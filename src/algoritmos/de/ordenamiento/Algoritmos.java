@@ -9,9 +9,9 @@ package algoritmos.de.ordenamiento;
  * @author manuel
  */
 public class Algoritmos {
-    
-    int[] datos
-    public void Burbuja (){
-        
+    int n;
+    double [] datos = new double[n];
+    public void Burbuja (int tam){
+        n=tam;
     }
 }
