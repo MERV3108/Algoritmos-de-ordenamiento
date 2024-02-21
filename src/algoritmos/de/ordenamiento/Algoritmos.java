@@ -11,7 +11,19 @@ package algoritmos.de.ordenamiento;
 public class Algoritmos {
     int n;
     double [] datos = new double[n];
-    public void Burbuja (int tam){
+    double [] result = new double[n];
+    public void Burbuja (int tam, double[] datos){
         n=tam;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j <= n-i-1; j++) {
+                if (datos[j]>datos[i]) {
+                    datos[j]=datos[i];
+                }
+            }
+        }
+    }
+    public void insercion(int tam){
+        n=tam;
+        
     }
 }
