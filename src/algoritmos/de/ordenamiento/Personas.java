@@ -4,6 +4,9 @@
  */
 package algoritmos.de.ordenamiento;
 import java.util.HashMap;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.Border;
 /**
  *
  * @author manue
@@ -15,7 +18,6 @@ public class Personas extends javax.swing.JFrame {
     String[] nombre = new String[n];
     int[] cedula = new int[n];
     double[] estatura = new double[n];
-    
     Algoritmos algs = new Algoritmos();
     int tam;
     
@@ -24,6 +26,12 @@ public class Personas extends javax.swing.JFrame {
      */
     public Personas() {
         initComponents();
+        Color colorPersonalizado = new Color(3,1,35); // R, G, B: valores entre 0 y 255
+        getContentPane().setBackground(colorPersonalizado);
+        Border textAreaBorder = BorderFactory.createLineBorder(Color.DARK_GRAY, 2);
+        // Establece el borde personalizado al JTextArea
+        listaOriginal.setBorder(textAreaBorder);
+        listaOrdenada.setBorder(textAreaBorder);
     }
     
     /**
@@ -57,39 +65,75 @@ public class Personas extends javax.swing.JFrame {
         listaOrdenada = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 20));
 
+        Nombre.setBackground(new java.awt.Color(45, 45, 45));
+        Nombre.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
+        Nombre.setForeground(new java.awt.Color(72, 112, 255));
+        Nombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Nombre.setCaretColor(new java.awt.Color(45, 45, 45));
         Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreActionPerformed(evt);
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(102, 0, 153));
+        jLabel1.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 153));
         jLabel1.setText("Nombre");
 
+        Cedula.setBackground(new java.awt.Color(45, 45, 45));
+        Cedula.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
+        Cedula.setForeground(new java.awt.Color(72, 112, 255));
+        Cedula.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Cedula.setCaretColor(new java.awt.Color(45, 45, 45));
         Cedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CedulaActionPerformed(evt);
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(102, 0, 153));
+        jLabel2.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 0, 153));
         jLabel2.setText("Cedula");
 
+        Edad.setBackground(new java.awt.Color(45, 45, 45));
+        Edad.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
+        Edad.setForeground(new java.awt.Color(72, 112, 255));
+        Edad.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Edad.setCaretColor(new java.awt.Color(45, 45, 45));
         Edad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EdadActionPerformed(evt);
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(102, 0, 153));
+        jLabel3.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 153));
         jLabel3.setText("Edad");
 
+        Estatura.setBackground(new java.awt.Color(45, 45, 45));
+        Estatura.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
+        Estatura.setForeground(new java.awt.Color(72, 112, 255));
+        Estatura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Estatura.setCaretColor(new java.awt.Color(45, 45, 45));
         Estatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EstaturaActionPerformed(evt);
             }
         });
 
+        jLabel4.setBackground(new java.awt.Color(102, 0, 153));
+        jLabel4.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 0, 153));
         jLabel4.setText("Estatura");
 
+        newPersona.setBackground(new java.awt.Color(51, 51, 51));
+        newPersona.setFont(new java.awt.Font("Hack Nerd Font", 1, 12)); // NOI18N
+        newPersona.setForeground(new java.awt.Color(72, 112, 255));
         newPersona.setText("Agregar persona");
         newPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,24 +141,43 @@ public class Personas extends javax.swing.JFrame {
             }
         });
 
+        tipoDato.setBackground(new java.awt.Color(45, 45, 45));
+        tipoDato.setFont(new java.awt.Font("Hack Nerd Font", 0, 12)); // NOI18N
+        tipoDato.setForeground(new java.awt.Color(72, 112, 255));
         tipoDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Altura", "Edad" }));
+        tipoDato.setBorder(null);
+        tipoDato.setOpaque(true);
         tipoDato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoDatoActionPerformed(evt);
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(173, 139, 235));
+        jLabel5.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 153));
         jLabel5.setText("Ordenar por:");
 
+        jLabel6.setBackground(new java.awt.Color(173, 139, 235));
+        jLabel6.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 0, 153));
         jLabel6.setText("Tipo de ordenamiento:");
 
+        tipoOrdenamiento.setBackground(new java.awt.Color(45, 45, 45));
+        tipoOrdenamiento.setFont(new java.awt.Font("Hack Nerd Font", 0, 12)); // NOI18N
+        tipoOrdenamiento.setForeground(new java.awt.Color(72, 112, 255));
         tipoOrdenamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Burbuja", "Merge" }));
+        tipoOrdenamiento.setBorder(null);
+        tipoOrdenamiento.setOpaque(true);
         tipoOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tipoOrdenamientoActionPerformed(evt);
             }
         });
 
+        Ordenar.setBackground(new java.awt.Color(51, 51, 51));
+        Ordenar.setFont(new java.awt.Font("Hack Nerd Font", 1, 14)); // NOI18N
+        Ordenar.setForeground(new java.awt.Color(72, 112, 255));
         Ordenar.setText("Ordenar");
         Ordenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,16 +185,39 @@ public class Personas extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setBackground(new java.awt.Color(173, 139, 235));
+        jLabel7.setFont(new java.awt.Font("Hack Nerd Font Mono", 1, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 0, 153));
         jLabel7.setText("Lista original");
 
+        jLabel8.setBackground(new java.awt.Color(173, 139, 235));
+        jLabel8.setFont(new java.awt.Font("Hack Nerd Font", 1, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 0, 153));
         jLabel8.setText("Lista ordenada");
 
+        listaOriginal.setEditable(false);
+        listaOriginal.setBackground(new java.awt.Color(45, 45, 45));
         listaOriginal.setColumns(20);
+        listaOriginal.setFont(new java.awt.Font("Hack Nerd Font", 0, 12)); // NOI18N
+        listaOriginal.setForeground(new java.awt.Color(72, 112, 255));
         listaOriginal.setRows(5);
+        listaOriginal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        listaOriginal.setCaretColor(new java.awt.Color(45, 45, 45));
+        listaOriginal.setHighlighter(null);
+        listaOriginal.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        listaOriginal.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        listaOriginal.setSelectionColor(new java.awt.Color(255, 0, 255));
         jScrollPane1.setViewportView(listaOriginal);
 
+        listaOrdenada.setBackground(new java.awt.Color(45, 45, 45));
         listaOrdenada.setColumns(20);
+        listaOrdenada.setFont(new java.awt.Font("Hack Nerd Font", 0, 12)); // NOI18N
+        listaOrdenada.setForeground(new java.awt.Color(72, 112, 255));
         listaOrdenada.setRows(5);
+        listaOrdenada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        listaOrdenada.setCaretColor(new java.awt.Color(45, 45, 45));
+        listaOrdenada.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        listaOrdenada.setSelectionColor(new java.awt.Color(255, 0, 255));
         jScrollPane2.setViewportView(listaOrdenada);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,10 +229,6 @@ public class Personas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(newPersona)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,61 +237,70 @@ public class Personas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Estatura, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Edad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7)
-                        .addGap(108, 108, 108))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Estatura, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(tipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)
                         .addComponent(jLabel6)
                         .addComponent(tipoOrdenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Ordenar, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(jLabel8)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(Ordenar, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(tipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Estatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(tipoOrdenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addContainerGap(47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tipoOrdenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Estatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))))
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(newPersona)
                     .addComponent(Ordenar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -314,7 +405,7 @@ public class Personas extends javax.swing.JFrame {
             if (!estaturasProcesadas.containsKey(copia[j])) {
                 for (int k = 0; k < i; k++) { // Cambio aquí: i en lugar de tam
                     if (estatura[k] == copia[j]) {
-                        texto.append("Nombre: ").append(nombre[k]).append(", Estatura: ").append(edad[k]).append("\n");
+                        texto.append("Nombre: ").append(nombre[k]).append(", Estatura: ").append(estatura[k]).append("\n");
                     }
                 }
                 estaturasProcesadas.put(copia[j], true);
