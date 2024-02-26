@@ -1,8 +1,10 @@
 package algoritmos.de.ordenamiento;
 public class Calculadora{
+    public int fila, columna, n;
+    int[][] a=new int[100][100];
+    int[][] b=new int[100][100];
+    int[][] c=new int[100][100];
     
-    public int m[][],a[][],b[][],c[][];
-    public int fila, columna;
     public void sumaMatrices(){
         for(int i=0; i<fila; i++){
             for(int j=0; j<columna; j++){
@@ -35,7 +37,7 @@ public class Calculadora{
         System.out.println("No se puede multiplicar matrices que no sean compatibles");
         }
     }
-    public void producto(int filA, int colA, int n) {
+    public void producto(int filA, int colA) {
         int[][] C = new int[filA][colA];
         for (int i = 0; i < filA; i++) {
             for (int j = 0; j < colA; j++) {
