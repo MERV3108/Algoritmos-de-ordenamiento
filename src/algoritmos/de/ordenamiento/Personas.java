@@ -71,7 +71,7 @@ public class Personas extends javax.swing.JFrame {
         Nombre.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
         Nombre.setForeground(new java.awt.Color(72, 112, 255));
         Nombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Nombre.setCaretColor(new java.awt.Color(45, 45, 45));
+        Nombre.setCaretColor(new java.awt.Color(72, 112, 255));
         Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NombreActionPerformed(evt);
@@ -87,7 +87,7 @@ public class Personas extends javax.swing.JFrame {
         Cedula.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
         Cedula.setForeground(new java.awt.Color(72, 112, 255));
         Cedula.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Cedula.setCaretColor(new java.awt.Color(45, 45, 45));
+        Cedula.setCaretColor(new java.awt.Color(72, 112, 255));
         Cedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CedulaActionPerformed(evt);
@@ -103,7 +103,7 @@ public class Personas extends javax.swing.JFrame {
         Edad.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
         Edad.setForeground(new java.awt.Color(72, 112, 255));
         Edad.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Edad.setCaretColor(new java.awt.Color(45, 45, 45));
+        Edad.setCaretColor(new java.awt.Color(72, 112, 255));
         Edad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EdadActionPerformed(evt);
@@ -119,7 +119,7 @@ public class Personas extends javax.swing.JFrame {
         Estatura.setFont(new java.awt.Font("Hack Nerd Font", 0, 14)); // NOI18N
         Estatura.setForeground(new java.awt.Color(72, 112, 255));
         Estatura.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Estatura.setCaretColor(new java.awt.Color(45, 45, 45));
+        Estatura.setCaretColor(new java.awt.Color(72, 112, 255));
         Estatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EstaturaActionPerformed(evt);
@@ -146,6 +146,7 @@ public class Personas extends javax.swing.JFrame {
         tipoDato.setForeground(new java.awt.Color(72, 112, 255));
         tipoDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Altura", "Edad" }));
         tipoDato.setBorder(null);
+        tipoDato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tipoDato.setOpaque(true);
         tipoDato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +169,7 @@ public class Personas extends javax.swing.JFrame {
         tipoOrdenamiento.setForeground(new java.awt.Color(72, 112, 255));
         tipoOrdenamiento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Burbuja", "Merge" }));
         tipoOrdenamiento.setBorder(null);
+        tipoOrdenamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tipoOrdenamiento.setOpaque(true);
         tipoOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,10 +275,10 @@ public class Personas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tipoOrdenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
@@ -346,7 +348,7 @@ public class Personas extends javax.swing.JFrame {
             escribirListaOrdenadaEstatura(copia);
         }
     }//GEN-LAST:event_OrdenarActionPerformed
-    private double[] copy(double[] data){
+    public double[] copy(double[] data){
         for (int j = 0; j < data.length; j++) {
             if(data[j]!=0){
                 tam++;
@@ -376,7 +378,7 @@ public class Personas extends javax.swing.JFrame {
     private void escribirListaOriginal() {
         StringBuilder texto = new StringBuilder();
         for (int j = 0; j < i; j++) {
-            texto.append("Nombre: ").append(nombre[j]).append(", Cedula: ").append(cedula[j]).append(", Edad: ").append(edad[j]).append(", Estatura: ").append(cedula[j]).append("\n");
+            texto.append("Nombre: ").append(nombre[j]).append(", Cedula: ").append(cedula[j]).append(", Edad: ").append(edad[j]).append(", Estatura: ").append(estatura[j]).append("\n");
         }
         listaOriginal.setText(texto.toString());
     }
@@ -387,8 +389,9 @@ public class Personas extends javax.swing.JFrame {
         for (int j = 0; j < tam; j++) {
             if (!edadesProcesadas.containsKey(copia[j])) {
                 for (int k = 0; k < i; k++) { // Cambio aquí: i en lugar de tam
-                    if (estatura[k] == copia[j]) {
+                    if (edad[k] == copia[j]) {
                         texto.append("Nombre: ").append(nombre[k]).append(", Edad: ").append(edad[k]).append("\n");
+                        System.out.println(edad[k]);
                     }
                 }
                 edadesProcesadas.put(copia[j], true);
