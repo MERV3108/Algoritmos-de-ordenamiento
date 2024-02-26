@@ -13,26 +13,27 @@ public class testAlgoritmos {
             datos[i]=(Math.random()*100);
         }
         //imprimir(datos);
+        System.out.println("Datos a analizar: "+tamaño);
         long startTime = System.nanoTime();
         algs.Burbu(tamaño, datos);
         long endTime = System.nanoTime();
         long executionTime = endTime - startTime; // Tiempo de ejecución en nanosegundos
-        System.out.println("Metodo burbuja: " + executionTime);
+        System.out.println("\tMetodo burbuja: " + executionTime);
         startTime = System.nanoTime();
         algs.seleccion(tamaño, datos);
         endTime = System.nanoTime();
         executionTime = endTime - startTime; // Tiempo de ejecución en nanosegundos
-        System.out.println("Metodo seleccion: " + executionTime);
+        System.out.println("\tMetodo seleccion: " + executionTime);
         startTime = System.nanoTime();
         algs.insercion(tamaño, datos);
         endTime = System.nanoTime();
         executionTime = endTime - startTime; // Tiempo de ejecución en nanosegundos
-        System.out.println("Metodo insercion: " + executionTime);
+        System.out.println("\tMetodo insercion: " + executionTime);
         startTime = System.nanoTime();
         algs.mergeSort(datos, 0, tamaño-1);
         endTime = System.nanoTime();
         executionTime = endTime - startTime; // Tiempo de ejecución en nanosegundos
-        System.out.println("Metodo merge: " + executionTime);
+        System.out.println("\tMetodo merge: " + executionTime);
         //imprimir(datos);
     }
     //void imprimir (double datos[]){

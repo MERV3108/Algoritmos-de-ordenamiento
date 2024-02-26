@@ -181,9 +181,14 @@ public class consolaaaaaaa {
                 }
                 case '2' ->{
                     testAlgoritmos testAlgs = new testAlgoritmos();
-                    System.out.println("Ingrese la cantidad de datos a analizar");
-                    int tam = ingreso.nextInt();
-                    testAlgs.prueba(tam);
+//                    System.out.println("Ingrese la cantidad de datos a analizar");
+//                    int tam = ingreso.nextInt();
+//                    testAlgs.prueba(tam);
+                      testAlgs.prueba(100);
+                      testAlgs.prueba(500);
+                      testAlgs.prueba(1000);
+                      testAlgs.prueba(5000);
+                      testAlgs.prueba(10000);
                 }
                 case '3' ->{
                     Personas personas = new Personas();
